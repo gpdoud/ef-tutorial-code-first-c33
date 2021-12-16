@@ -16,6 +16,9 @@ namespace ef_tutorial_code_first
 			var custCtrl = new CustomersController();
 			var customers = await custCtrl.GetAll();
 			customers.ForEach(c => Console.WriteLine(c.Name));
+
+			Console.WriteLine("Press any key ...");
+			Console.ReadLine();
 		}
 	}
 }

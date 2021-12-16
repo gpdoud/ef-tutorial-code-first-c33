@@ -25,5 +25,11 @@ namespace SalesDbLib.Controllers
 									.OrderBy(x => x.Name)
 									.ToListAsync();
 		}
+		public async Task<bool> Change(int Id, Customer customer)
+		{
+			_context.Entry(customer).State
+				= EntityState.Modified;
+			return await _context.SaveChangesAsync() == 1;
+		}
 	}
 }
